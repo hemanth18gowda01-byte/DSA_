@@ -63,4 +63,29 @@ at first we will check whether the character is in that nodes or not if char is 
 
 <p>It's almost similar to searching like at first we will initialize currentNode is root because search starts from root node then it will flows from one node to other.</p>
 
+    def completeSuggestions(self, node, prefix, suggestions):
+        if node.isEndOfWord:
+            suggestions.append(prefix)
+        for char, child_node in node.child.items():
+            self.completeSuggestions(child_node, prefix + char, suggestions)
+
+<h1>function completeSuggestions(self,node,prefix,suggestions)</h1>
+
+<p>we need this function for auto completing word suggestions , we can add this code inside auto completing word suggestion or keep it clean likewise keep separately.
+Here we will pass the currentNode and prefix which we can find from prefixSearching , using loops it will flow through all nodes until it gets True append all those in a dynamic array to use it for giving suggestions.</p>
+
+    def displayingAutoCompleteSuggestions(self, prefix):
+        currentNode=self.root
+        for char in prefix:
+            if char not in currentNode.child:
+                return []
+            currentNode=currentNode.child[char]
+        suggestions=[]
+        self.completeSuggestions(currentNode, prefix, suggestions)
+        return suggestions
+
+<h1>function displayingAutoCompleteSuggestions(self,prefix)</h1>
+
+<p>Using completeSuggestions(currentNode,prefix,suggestions) we can flow through all nodes with that prefix then add (or append) those words in dynamic array so using that function here we can implement auto suggestions for that prefix.</p>
+
 
