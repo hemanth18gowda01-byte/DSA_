@@ -32,6 +32,17 @@ class TrieDataStructure():
         return True
 
     def displayingAutoCompleteSuggestions(self, prefix):
-        pass
+        currentNode=self.root
+        for char in prefix:
+            if char not in currentNode.child:
+                return []
+            currentNode=currentNode.child[char]
+        suggestions=[]
+        self.completeSuggestions(currentNode, prefix, suggestions)
+        return suggestions
 
-    
+    def completeSuggestions(self, node, prefix, suggestions):
+        if node.isEndOfWord:
+            suggestions.append(prefix)
+        for char, child_node in node.child.items():
+            self.completeSuggestions(child_node, prefix + char, suggestions)
