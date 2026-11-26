@@ -46,3 +46,11 @@ class TrieDataStructure():
             suggestions.append(prefix)
         for char, child_node in node.child.items():
             self.completeSuggestions(child_node, prefix + char, suggestions)
+
+obj=TrieDataStructure()
+obj.inserting("computer")
+obj.inserting("compiler")
+obj.inserting("complete")
+print(obj.displayingAutoCompleteSuggestions("comp"))
+print(obj.searching("compiler"))
+print(obj.prefixSearching("comp"))
