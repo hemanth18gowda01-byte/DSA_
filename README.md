@@ -1,5 +1,14 @@
 # Trie Data Structure Implementation
 
+    class TrieNode():
+        def __init__(self):
+            self.child=dict()
+            self.isEndOfWord=False
+
+    class TrieDataStructure():
+        def __init__(self):
+            self.root = TrieNode()
+
 ## class TrieNode
 <p>It's like a container which has will keep the character in dictionary 
     which has key has the character in word in child variable.
@@ -13,6 +22,14 @@
 
 ## class TrieDataStucture
 <p>Here in this class we are initializing root as TrieNode</p>
+
+    def inserting(self, word):
+        currentNode=self.root
+        for char in word:
+            if char not in currentNode.child:
+                currentNode.child[char]=TrieNode()
+            currentNode=currentNode.child[char]
+        currentNode.isEndOfWord=True
 
 <h>function inserting(self,word)</h>
 
