@@ -31,7 +31,7 @@
             currentNode=currentNode.child[char]
         currentNode.isEndOfWord=True
 
-<h>function inserting(self,word)</h>
+<h1>function inserting(self,word)</h1>
 
 <p>Whenever we start inserting we will start from root node so we will start 
 from root, currentNode=self.root it's a node from TrieNode.
@@ -47,7 +47,7 @@ at first we will check whether the character is in that nodes or not if char is 
             currentNode=currentNode.child[char]
         return currentNode.isEndOfWord
 
-<h> function searching(self,word)</h>
+<h1> function searching(self,word)</h1>
 
 <p>whenever we start searching we will start from root node right so we are initializing '''python currentNode=self.root". In searching we will search all the characters in the word so with the help of for loop we can check all the character in word by comparing character with node value then currentNode will carry forward until the boolean value True because that is end of word in trie.</p>
 
