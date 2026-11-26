@@ -51,4 +51,16 @@ at first we will check whether the character is in that nodes or not if char is 
 
 <p>whenever we start searching we will start from root node right so we are initializing '''python currentNode=self.root". In searching we will search all the characters in the word so with the help of for loop we can check all the character in word by comparing character with node value then currentNode will carry forward until the boolean value True because that is end of word in trie.</p>
 
+    def prefixSearching(self, prefix):
+        currentNode=self.root
+        for char in prefix:
+            if char not in currentNode.child:
+                return False
+            currentNode=currentNode.child[char]
+        return True
+
+<h1> function prefixSearching(self,prefix)</h1>
+
+<p>It's almost similar to searching like at first we will initialize currentNode is root because search starts from root node then it will flows from one node to other.</p>
+
 
